@@ -20,13 +20,15 @@ public class Model {
 	public List<String> getAnagrammi(String parola){
 		List<String> risultato = new ArrayList<String>();
 		permutaRicorsiva("", parola, 0, risultato);
+	
 		return risultato;
 	}
 	
 	public void permutaRicorsiva(String parziale, String lettere, int livello, List<String> risultato) {
 		
 		if(lettere.length()==0) {
-			risultato.add(parziale);
+			if(!risultato.contains(parziale))
+				risultato.add(parziale);
 		}
 		
 		else {
@@ -60,4 +62,21 @@ public class Model {
 		
 		return anagrammiErrati;
 	}
+	
+	/*public void permutaRicorsiva(String parziale, String lettere, int livello, List<String>risultato) {
+		if(lettere.length()==0) {
+			risultato.add(parziale);
+		}
+		
+		else {
+			for(int posizione=0; posizione<lettere.length(); posizione++) {
+				
+				char tentativo = lettere.charAt(posizione);
+				String nuovaParziale = parziale+tentativo;
+				String nuovaLettere = lettere.substring(0,posizione)+lettere.substring(posizione+1);
+				if(this.parolaInDizionario(nuovaParziale))
+					permutaRicorsiva(nuovaParziale, nuovaLettere, livello+1, risultato);
+			}
+		}
+	}*/
 }

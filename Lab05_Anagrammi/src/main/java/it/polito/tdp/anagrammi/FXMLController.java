@@ -47,6 +47,12 @@ public class FXMLController {
     	for(String ss: anagrammiErrati) {
     		txtAnagrammiErrati.appendText(ss + "\n");
     	}
+    	/*List<String> anagrammiCorretti = model.getAnagrammi(parola);
+    	for(String s: anagrammiCorretti) {
+    		txtAnagrammiCorretti.appendText(s+"\n");
+    	}
+    	txtAnagrammiErrati.setText("Non sono stati calcolati tutti gli anagrammi, ma solo quelli corretti");
+    	*/
     }
 
     @FXML
