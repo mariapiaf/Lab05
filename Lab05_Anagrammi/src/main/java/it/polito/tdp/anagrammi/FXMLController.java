@@ -39,6 +39,7 @@ public class FXMLController {
     @FXML
     void doCalcolaAnagrammi(ActionEvent event) {
     	String parola = txtInserisci.getText();
+    	// controllo su parola con meno di 8 caratteri
     	List<String> anagrammiCorretti = model.anagrammiCorretti(parola);
     	for(String s: anagrammiCorretti) {
     		txtAnagrammiCorretti.appendText(s+"\n");
